@@ -1,0 +1,15 @@
+USE [master]
+GO
+
+/****** Object:  Audit [Zagreb-Audit]    Script Date: 6/6/2024 8:47:49 PM ******/
+CREATE SERVER AUDIT [Zagreb-Audit]
+TO FILE 
+(	FILEPATH = N'C:\DatabaseXE\'
+	,MAXSIZE = 0 MB
+	,MAX_ROLLOVER_FILES = 2147483647
+	,RESERVE_DISK_SPACE = OFF
+) WITH (QUEUE_DELAY = 1000, ON_FAILURE = CONTINUE, AUDIT_GUID = 'ff55df12-089f-4693-9ef7-4324c73e1586')
+ALTER SERVER AUDIT [Zagreb-Audit] WITH (STATE = ON)
+GO
+
+
